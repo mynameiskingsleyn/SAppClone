@@ -1,0 +1,99 @@
+React-Native WhatsApp
+issue with android emulator
+	https://stackoverflow.com/questions/40618200/android-could-not-install-smartsocket-listener
+
+
+WhatApp Clone tutorial
+Lesson 7 (Visual studio code useful extensions)
+	material icon -> just makes it look good with the icon.
+	prettier -> Code formatter (option + shift + f) 
+ Lesson 9 ( Android emulator)
+	google search ==> android studio —>
+	After installation, we need to make sure we install the current for our mac
+	We open the Android Studio. 
+	We are not using to create app, so we need to go to the configure dropdown and select AVD Manager
+	AVD(Android Virtual Device). click on that and then click on “Create Virtual device” 
+	on the ‘Chose a device definition’ make sure you chose one that has a “Play Icon” 
+
+Lesson 13. (SafeArea)
+	install ==> expo install react-native-safe-area-context
+	if using npm ==> npm install react-native-safe-area-context
+	usage ==> import { SafeAreaProvider } from 'react-native-safe-area-context';
+		and wrap everything in it. replacing <View>
+		We need SafeAreaView as well
+		<SafeAreaProvider> 
+      			<SafeAreaView>
+        				<Text>App is now working!</Text>
+      			</SafeAreaView>
+    		</SafeAreaProvider>
+	Safe Area knows what area it is not safe to display content[the upper menu with time and more]
+
+Lesson 14 (SideEffect) useEffect
+	This is where you but function that is set to run on every render.
+	If you don’t want it to run all the time specify dependencies ([]).
+	if it is empty, it would only run ones.
+		useEffect(() => {
+    			console.log("I just rendered!!");
+  		}, [])
+
+Lesson 16 (useCallback)
+	It is used  to wrap function to tell React not to recreate a function when a component re-renders.
+	It is helpful when a child component is using this function, if child component uses the function as a dependency on useEffect. 
+	and the parent component uses this function in a ‘useCallback()’ having dependencies.
+	When the dependencies change, the function becomes a new object which forces the child Component with the useEffect having the
+	function as a dependency to rerun the function again automatically.
+Section 3: Fonts and splash screens.
+Lesson 17 (Picking a custom font)
+	install custom font —> google ==> fonts.google.com/about 
+		click on font tab.
+		most used = Roboto
+		Select all or just the fonts you want and “download”
+		copy all the files into assets/fonts.
+	To get our app to use them we need to install a package!!
+		command —> expo install  expo-splash-screen 
+	Document for splash screen ==> https://docs.expo.dev/versions/latest/sdk/splash-screen/
+		just to show splash screen when app is loading
+	We try to use the loading to wait for the app to load.
+	onLayout = {function} . We attach this to react element. so as to call a function when this layout is ready. 
+	<SafeAreaProvider 
+     	 style={styles.container}
+      	onLayout={onLayout}>
+	we also need a function returning a null when the app is not ready.
+		if(!appIsReady) { return null }
+
+Lesson 19 (Adding a Custom Splash Screen)
+	Note: for splash to work, we need to have the splash entry in our app.json, file.
+	 "splash" : {
+      		"image": "./assets/splash.png",
+      		"resizeMode": "contain", 
+      		"backgroundColor": "#ffffff"
+   		 },
+	can also use "resizeMode": "contain",
+———————————————————————————————————————————————————————————————
+
+Lesson 20. (Setting custom fonts)
+	To set custom font, you need ‘expo-font’
+	import * as Font from ‘expo-font’
+
+———————————————————————————————
+
+Lesson 21 (Install React Navigation)
+	on Google, type in —>React Navigation 
+	now we find “Navigators” on the left menu.
+	we used the stack..
+	Dependencies => React-navigation/naive
+	Installation ==> npm install @react-navigation/native 
+				npx expo install react-native-screens react-native-safe-area-context	
+				  npx pod-install ios
+				npm install @react-navigation/stack
+
+Lessong 22(Creating Stack Navigation)
+
+	
+
+		
+	
+	
+	
+
+
